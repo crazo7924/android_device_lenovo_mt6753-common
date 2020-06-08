@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2019 The LineageOS Project
+# Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,11 +16,11 @@
 
 COMMON_PATH := device/lenovo/mt6753-common
 
-TARGET_SPECIFIC_HEADER_PATH := vendor/mediatek/include
+TARGET_SPECIFIC_HEADER_PATH := $(COMMON_PATH)/include
 
 # HIDL
-DEVICE_MANIFEST_FILE := vendor/mediatek/manifest.xml
-DEVICE_FRAMEWORK_MANIFEST_FILE := vendor/mediatek/framework_manifest.xml
+DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/framework_manifest.xml
 
 # Architecture
 ARCH := arm64
@@ -36,14 +36,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_BOARD_SUFFIX := _64
-TARGET_CPU_ABI_LIST := arm64-v8a,armeabi-v7a,armeabi
-TARGET_CPU_ABI_LIST_32_BIT := armeabi-v7a,armeabi
-TARGET_CPU_ABI_LIST_64_BIT := arm64-v8a
-TARGET_SUPPORTS_32_BIT_APPS := true
-TARGET_SUPPORTS_64_BIT_APPS := true
-
-# Charger
-BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # Images
 TARGET_NO_BOOTLOADER := true
@@ -68,9 +60,6 @@ BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_mediatek
-
-# Enable Minikin text layout engine (will be the default soon)
-USE_MINIKIN := true
 
 # Configure jemalloc for low memory
 MALLOC_SVELTE := true
@@ -99,10 +88,10 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 firmware_class.path=/system/vendo
 BOARD_KERNEL_BASE := 0x40078000
 BOARD_KERNEL_PAGESIZE := 2048
 BOARD_MKBOOTIMG_ARGS := --base 0x40078000 --pagesize 2048 --kernel_offset 0x00008000 --ramdisk_offset 0x03f88000 --second_offset 0x00e88000 --tags_offset 0x0df88000 --board A7010
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 MTK_APPENDED_DTB_SUPPORT := yes
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_USES_FULL_RECOVERY_IMAGE := true
+LZMA_RAMDISK_TARGETS := recovery
 
 # Recovery
 BOARD_NO_SECURE_DISCARD := true
@@ -110,19 +99,7 @@ TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 BOARD_HAS_NO_SELECT_BUTTON := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/recovery.fstab
-LZMA_RAMDISK_TARGETS := recovery # TODO Actually enable support for lzma ramdisk
-
-# TWRP
-TW_THEME := portrait_hdpi
-TW_USE_TOOLBOX := true
 RECOVERY_SDCARD_ON_DATA := true
-TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file
-TW_DEFAULT_BRIGHTNESS := 80
-TW_INCLUDE_CRYPTO := true
-TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-TW_CUSTOM_CPU_TEMP_PATH := /sys/devices/virtual/thermal/thermal_zone1/temp
-TW_EXCLUDE_SUPERSU := true
-
 TARGET_PROVIDES_LIBLIGHT := true
 BOARD_GLOBAL_CFLAGS += -DCOMPAT_SENSORS_M
 
@@ -148,11 +125,7 @@ ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HAVE_VFP := true
 
 # SELinux
-BOARD_SEPOLICY_DIRS := vendor/mediatek/sepolicy
-
-# Block based ota
-# see http://review.cyanogenmod.org/#/c/78849/1/core/Makefile
-BLOCK_BASED_OTA := false
+BOARD_SEPOLICY_DIRS := $(COMMON_PATH)/sepolicy
 
 # Prop
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true

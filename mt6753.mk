@@ -16,8 +16,6 @@
 
 COMMON_PATH := device/lenovo/mt6753-common
 
-$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
-
 # Dalvik heap configurations
 $(call inherit-product-if-exists, frameworks/native/build/phone-xxhdpi-3072-dalvik-heap.mk)
 
@@ -32,6 +30,13 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
+
+# Charger
+PRODUCT_COPY_FILES += \
+    $(COMMOM_PATH)/config/charger/animation.txt:$(TARGET_COPY_OUT_VENDOR)/etc/res/values/charger/animation.txt \
+    $(COMMON_PATH)/config/charger/battery_scale.png:$(TARGET_COPY_OUT_VENDOR)/etc/res/images/charger/battery_scale.png \
+    $(COMMOM_PATH)/config/charger/battery_fail.png:$(TARGET_COPY_OUT_VENDOR)/etc/res/images/charger/battery_fail.png \
+    $(COMMOM_PATH)/config/charger/main_font.png:$(TARGET_COPY_OUT_VENDOR)/etc/res/images/charger/main_font.png
 
 # Prop
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
@@ -176,11 +181,6 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
    libccci_util
-
-# Charger
-PRODUCT_PACKAGES += \
-    charger_res_images \
-    charger
 
 # Shims
 PRODUCT_PACKAGES += \
@@ -334,4 +334,4 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # HIDL
 PRODUCT_COPY_FILES += \
-    vendor/mediatek/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
+    $(COMMON_PATH)/manifest.xml:$(TARGET_COPY_OUT_VENDOR)/manifest.xml
