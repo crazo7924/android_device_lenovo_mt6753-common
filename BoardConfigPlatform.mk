@@ -1,4 +1,4 @@
-#
+
 # Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -48,8 +48,6 @@ OVERRIDE_RS_DRIVER := libRSDriver_mtk.so
 TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/hardware/include
 
 ### KERNEL
-TARGET_KERNEL_SOURCE = kernel/lenovo/k5fpr/
-
 BOARD_KERNEL_BASE            := 0x40078000
 BOARD_KERNEL_PAGESIZE        := 2048
 BOARD_KERNEL_IMAGE_NAME      := Image-gz.dtb
@@ -81,7 +79,7 @@ AB_OTA_UPDATER := false
 
 BOARD_ROOT_EXTRA_FOLDERS := \
     nvram \
-    dqmdbg \
+     \
     keydata \
     keyrefuge \
     omr
@@ -89,9 +87,6 @@ BOARD_ROOT_EXTRA_FOLDERS := \
 ### VENDOR
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
-# Vendor security patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.lineage.build.vendor_security_patch=2019-06-05
 
 ### CACHE
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -113,11 +108,6 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/hardware/bluetoo
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
 
 ### GRAPHICS
-# hardware/interfaces/configstore/1.1/default/surfaceflinger.mk
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
-TARGET_HAS_HDR_DISPLAY := true
-TARGET_HAS_WIDE_COLOR_DISPLAY := true
-
 # Display
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := -8000000
 VSYNC_EVENT_PHASE_OFFSET_NS := -8000000
@@ -146,8 +136,6 @@ TARGET_LD_SHIM_LIBS := \
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 
 ### PROPERTIES
-TARGET_SYSTEM_PROP += $(PLATFORM_PATH)/system.prop
-TARGET_VENDOR_PROP += $(PLATFORM_PATH)/vendor.prop
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 ### INIT
@@ -163,7 +151,7 @@ BOARD_GLOBAL_CFLAGS += -DADD_LEGACY_ACQUIRE_BUFFER_SYMBOL
 BOARD_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 
 # EGL
-BOARD_EGL_CFG := $(COMMON_PATH)/configs/egl.cfg
+BOARD_EGL_CFG := $(PLATFORM_PATH)/config/egl.cfg
 USE_OPENGL_RENDERER := true
 BOARD_EGL_WORKAROUND_BUG_10194508 := true
 
