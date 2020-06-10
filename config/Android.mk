@@ -16,6 +16,4 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter k5fpr, $(TARGET_DEVICE)),)
-    include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
+include $(call all-subdir-makefiles,$(LOCAL_PATH))

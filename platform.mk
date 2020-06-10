@@ -14,8 +14,20 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := $(call my-dir)
+PLATFORM_PATH := device/lenovo/mt6753-common
 
-ifneq ($(filter k5fpr, $(TARGET_DEVICE)),)
-    include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
+# Soong namespaces
+PRODUCT_SOONG_NAMESPACES += \
+    $(PLATFORM_PATH)
+
+DEVICE_PACKAGE_OVERLAYS += \
+    $(PLATFORM_PATH)/overlay
+
+PRODUCT_ENFORCE_RRO_TARGETS := \
+    framework-res
+
+# Properties
+include $(PLATFORM_PATH)/vendor_prop.mk
+include $(PLATFORM_PATH)/prop.mk
+
+include $(PLATFORM_PATH)/platform/*.mk

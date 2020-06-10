@@ -16,6 +16,20 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter k5fpr, $(TARGET_DEVICE)),)
-    include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
+include $(CLEAR_VARS)
+LOCAL_MODULE := fstab.charger
+LOCAL_SRC_FILES := fstab.charger
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_STEM := fstab.charger
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)
+include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := fstab.swap
+LOCAL_SRC_FILES := fstab.swap
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_STEM := fstab.swap
+LOCAL_MODULE_CLASS := ETC
+LOCAL_MODULE_PATH := $(TARGET_OUT_ETC)
+include $(BUILD_PREBUILT)

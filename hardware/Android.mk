@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2020 The LineageOS Project
+# Copyright (C) 2011 The Android Open-Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,6 +16,4 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifneq ($(filter k5fpr, $(TARGET_DEVICE)),)
-    include $(call all-subdir-makefiles,$(LOCAL_PATH))
-endif
+include $(call all-makefiles-under,$(LOCAL_PATH))
