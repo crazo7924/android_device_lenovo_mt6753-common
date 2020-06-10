@@ -31,13 +31,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Boot animation
 TARGET_BOOTANIMATION_HALF_RES := true
 
-# Charger
-PRODUCT_COPY_FILES += \
-    $(COMMOM_PATH)/config/charger/animation.txt:$(TARGET_COPY_OUT_VENDOR)/etc/res/values/charger/animation.txt \
-    $(COMMON_PATH)/config/charger/battery_scale.png:$(TARGET_COPY_OUT_VENDOR)/etc/res/images/charger/battery_scale.png \
-    $(COMMOM_PATH)/config/charger/battery_fail.png:$(TARGET_COPY_OUT_VENDOR)/etc/res/images/charger/battery_fail.png \
-    $(COMMOM_PATH)/config/charger/main_font.png:$(TARGET_COPY_OUT_VENDOR)/etc/res/images/charger/main_font.png
-
 # Prop
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.secure=0 \
