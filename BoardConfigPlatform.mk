@@ -1,4 +1,3 @@
-
 # Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -50,9 +49,9 @@ TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/hardware/include
 ### KERNEL
 BOARD_KERNEL_BASE            := 0x40078000
 BOARD_KERNEL_PAGESIZE        := 2048
-BOARD_KERNEL_IMAGE_NAME      := Image-gz.dtb
+BOARD_KERNEL_IMAGE_NAME      := Image.gz-dtb
 
-BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 firmware_class.path=/system/vendor/firmware
+BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 firmware_class.path=/vendor/firmware
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 BOARD_MKBOOTIMG_ARGS := --base 0x40078000
@@ -71,18 +70,9 @@ TARGET_USES_64_BIT_BINDER := true
 # BOARD_VNDK_VERSION := current
 
 ### SYSTEM
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-# build/make
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 # system/core and build/make
 AB_OTA_UPDATER := false
-
-BOARD_ROOT_EXTRA_FOLDERS := \
-    nvram \
-     \
-    keydata \
-    keyrefuge \
-    omr
 
 ### VENDOR
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
@@ -121,16 +111,20 @@ DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/framework_manifest.xml
 
 ### SHIMS
 TARGET_LD_SHIM_LIBS := \
-	/system/lib/libgui.so|/system/vendor/lib/libmtkshim_gui.so \
-	/system/lib64/libgui.so|/system/vendor/lib64/libmtkshim_gui.so \
-	/system/vendor/lib/hw/audio.primary.mt6753.so|/system/vendor/lib/libmtkshim_audio.so \
-	/system/vendor/lib64/hw/audio.primary.mt6753.so|/system/vendor/lib64/libmtkshim_audio.so \
-	/system/vendor/lib/libcam.camadapter.so|/system/vendor/lib/libmtkshim_camera.so \
-	/system/vendor/lib64/libcam.camadapter.so|/system/vendor/lib64/libmtkshim_camera.so \
-	/system/lib/libui.so|/system/vendor/lib/libmtkshim_ui.so \
-	/system/lib64/libui.so|/system/vendor/lib64/libmtkshim_ui.so \
-	/system/vendor/lib/libcam.camnode.so|/system/vendor/lib/libmtkshim_camera.so \
-	/system/vendor/lib64/libcam.camnode.so|/system/vendor/lib64/libmtkshim_camera.so
+	/vendor/lib/egl/libGLES_mali.so|/vendor/lib/libshim_egl.so \
+	/vendor/lib64/egl/libGLES_mali.so|/vendor/lib64/libshim_egl.so \
+	/system/lib/liblog.so|/vendor/lib/libshim_xlog.so \
+	/system/lib64/liblog.so|/vendor/lib64libshim_xlog.so \
+	/system/lib/libgui.so|/vendor/lib/libmtkshim_gui.so \
+	/system/lib64/libgui.so|/vendor/lib64/libmtkshim_gui.so \
+	/vendor/lib/hw/audio.primary.mt6753.so|/vendor/lib/libmtkshim_audio.so \
+	/vendor/lib64/hw/audio.primary.mt6753.so|/vendor/lib64/libmtkshim_audio.so \
+	/vendor/lib/libcam.camadapter.so|/vendor/lib/libmtkshim_camera.so \
+	/vendor/lib64/libcam.camadapter.so|/vendor/lib64/libmtkshim_camera.so \
+	/system/lib/libui.so|/vendor/lib/libmtkshim_ui.so \
+	/system/lib64/libui.so|/vendor/lib64/libmtkshim_ui.so \
+	/vendor/lib/libcam.camnode.so|/vendor/lib/libmtkshim_camera.so \
+	/vendor/lib64/libcam.camnode.so|/vendor/lib64/libmtkshim_camera.so
 
 ### SEPOLICY
 BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
@@ -171,8 +165,8 @@ WIFI_DRIVER_FW_PATH_STA          := STA
 WIFI_DRIVER_FW_PATH_AP           := AP
 WIFI_DRIVER_FW_PATH_P2P          := P2P
 WIFI_DRIVER_STATE_CTRL_PARAM	 := "/dev/wmtWifi"
-WIFI_DRIVER_STATE_ON		     := 1
-WIFI_DRIVER_STATE_OFF		     := 0
+WIFI_DRIVER_STATE_ON		 := 1
+WIFI_DRIVER_STATE_OFF		 := 0
 
 ### RIL
 # Use stock RIL stack
@@ -186,3 +180,4 @@ BUILD_BROKEN_DUP_RULES := true
 LZMA_RAMDISK_TARGETS := recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "ABGR_8888"
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/recovery.fstab
+LZMA_RAMDISK_TARGETS := boot, recovery

@@ -47,6 +47,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libprotobuf-cpp-full
 
+# NVRAM
+PRODUCT_PACKAGES += \
+    libnvram
+
 # Display
 PRODUCT_PACKAGES += \
     libion \
@@ -184,7 +188,9 @@ PRODUCT_PACKAGES += \
     libmtkshim_ui \
     libmtkshim_gui \
     libmtkshim_audio \
-    libmtkshim_camera
+    libmtkshim_camera \
+    libshim_xlog \
+    libshim_egl
 
 # Power
 PRODUCT_PACKAGES += \

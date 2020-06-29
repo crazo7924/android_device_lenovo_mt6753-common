@@ -38,3 +38,9 @@ type init_thh, domain;
 type init_thh_exec, exec_type, file_type, vendor_file_type;
 
 init_daemon_domain(init_thh)
+
+
+type mxg2320d, domain;
+type mxg2320d_exec, exec_type, file_type, vendor_file_type;
+
+init_daemon_domain(mxg2320d)

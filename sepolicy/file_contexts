@@ -19,3 +19,4 @@
 /vendor/bin/dm_agent_binder					u:object_r:dm_agent_binder_exec:s0
 /vendor/bin/init_thh						u:object_r:init_thh_exec:s0
 /vendor/bin/autokd						u:object_r:autokd_exec:s0
+/vendor/bin/mxg2320d						u:object_r:mxg2320d_exec:s0

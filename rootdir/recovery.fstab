@@ -1,5 +1,5 @@
-/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/system /system ext4 ro,noatime			wait
-/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/preload /vendor ext4 ro,noatime                    wait
+/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/system /system ext4 ro,noatime			wait,recoveryonly
+/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/preload /vendor ext4 ro,noatime                    wait,recoveryonly
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/userdata /data ext4 noatime,nosuid,nodev,noauto_da_alloc,discard   wait,check,formattable,encryptable=/dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/metadata,
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/cache /cache ext4 noatime,nosuid,nodev,noauto_da_alloc,discard   wait,check
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/protect1 /protect_f ext4 noatime,nosuid,nodev,noauto_da_alloc,commit=1,nodelalloc   wait,check,formattable

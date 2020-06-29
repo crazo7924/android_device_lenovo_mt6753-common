@@ -1,0 +1,77 @@
+
+
+cc_library_shared {
+    name: "libmtkshim_gui",
+    srcs: ["gui.cpp"],
+    shared_libs: [
+        "libbinder",
+        "libui",
+        "libgui",
+        "libutils",
+        "liblog",
+    ],
+    include_dirs: ["frameworks/native/include"],
+    proprietary: true,
+    compile_multilib: "both"
+}
+
+cc_library_shared {
+    name: "libmtkshim_audio",
+    srcs: ["audio.cpp"],
+    shared_libs: ["libmedia"],
+    compile_multilib: "both",
+    proprietary: true
+}
+
+cc_library_shared {
+    name: "libmtkshim_camera",
+    srcs: [
+        "camera/CameraParameters.cpp",
+        "camera/camera.cpp",
+    ],
+    shared_libs: [
+        "libdpframework",
+        "libutils",
+    ],
+    compile_multilib: "both",
+    proprietary: true
+}
+
+cc_library_shared {
+    name: "libmtkshim_ui",
+    srcs: ["ui.cpp"],
+    shared_libs: [
+        "libui",
+        "libutils",
+        "libbinder",
+    ],
+    compile_multilib: "both",
+    proprietary: true
+}
+
+cc_library_shared {
+    name: "libshim_xlog",
+    srcs: ["xlog.c"],
+    shared_libs: ["liblog"],
+    cflags: [
+        "-O3",
+        "-Wno-unused-variable",
+        "-Wno-unused-parameter",
+    ],
+    compile_multilib: "both",
+    proprietary: true,
+}
+
+cc_library_shared {
+    name: "libshim_egl",
+    srcs: ["egl/callstack.cpp"],
+    static_libs: ["libgcc"],
+    shared_libs: [
+        "libm",
+        "libc",
+        "libutilscallstack",
+        "libutils",
+    ],
+    proprietary: true,
+    compile_multilib: "both"
+}
