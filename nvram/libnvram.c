@@ -87,11 +87,6 @@
 #define INVALID_HANDLE_VALUE    -1
 #include "libnvram_sec.h"
 
-#ifdef __cplusplus
-extern "C" {
-#include <stdbool.h>
-#endif
-
 extern const char* __progname;
 
 typedef struct {
@@ -5996,7 +5991,3 @@ bool Check_UpdateStatus(void) {
 		return true;
 	}
 }
-#ifdef __cplusplus
-}
-#endif
-

@@ -1,20 +1,24 @@
 cc_library_shared {
-    name:"libnvram",
-    proprietary: true,
-    compile_multilib: "both",
-    use_clang_lld: false,
-    strip: { none: true },
-    static_libs: ["libfstab"],
-    shared_libs: ["libc",
-		  "libcutils",
-		  "libcustom_nvram",
-		  "libnvram_platform",
-		  "libbase",
-		  "liblog"],
-    srcs: ["libnvram.cpp"],
-    include_dirs: [
-	"system/core/include/private",
-	"system/core/fs_mgr/include_fstab/fstab",
-	"system/core/fs_mgr/include",
+
+    shared_libs: [
+        "libc",
+        "libcutils",
+        "libcustom_nvram",
+        "libnvram_platform",
+        "libbase",
+        "liblog",
     ],
+
+    srcs: ["libnvram.c"],
+
+    include_dirs: [
+        "system/core/include/private",
+        "system/core/fs_mgr/include_fstab/fstab",
+    ],
+
+    static_libs: ["libfstab"],
+
+    name: "libnvram",
+    proprietary: true,
+
 }
