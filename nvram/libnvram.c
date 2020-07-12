@@ -66,7 +66,7 @@
 //#include "CFG_file_lid.h"
 #include <dirent.h>
 #include <sys/mount.h>
-#include <fs_mgr.h>
+//#include <fs_mgr.h>
 #include <fstab.h>
 #include <cutils/properties.h>
 #include "libnvram_log.h"
