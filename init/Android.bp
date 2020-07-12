@@ -16,7 +16,6 @@
 
 cc_library_static {
     name: "libinit_mediatek",
-    recovery_available: true,
     srcs: ["init_mediatek.cpp"],
     include_dirs: [
         "system/core/base/include",
