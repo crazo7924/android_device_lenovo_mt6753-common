@@ -58,7 +58,7 @@
 #include <sys/wait.h>
 #include <stdio.h>
 #include <stdlib.h>
-//#include <stdbool.h>
+#include <stdbool.h>
 #include <fcntl.h>
 #include <errno.h>
 #include <unistd.h>
@@ -66,9 +66,8 @@
 //#include "CFG_file_lid.h"
 #include <dirent.h>
 #include <sys/mount.h>
-//#include <fs_mgr.h>
-//#include <fstab.h>
-#include "libnvram_wrapper.h"
+#include <fs_mgr.h>
+#include <fstab.h>
 #include <cutils/properties.h>
 #include "libnvram_log.h"
 #include "libnvram.h"
