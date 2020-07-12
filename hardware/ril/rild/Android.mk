@@ -40,6 +40,7 @@ LOCAL_SHARED_LIBRARIES := \
 	liblog \
 	libcutils \
 	libril \
+	librilutils \
 	libdl
 
 LOCAL_STATIC_LIBRARIES := \
@@ -47,10 +48,6 @@ LOCAL_STATIC_LIBRARIES := \
 
 LOCAL_CFLAGS += -DANDROID_MULTI_SIM
 LOCAL_CFLAGS += -DANDROID_SIM_COUNT_2
-
-# temporary hack for broken vendor rils
-LOCAL_WHOLE_STATIC_LIBRARIES := \
-	librilutils
 
 LOCAL_CFLAGS := -DRIL_SHLIB
 
