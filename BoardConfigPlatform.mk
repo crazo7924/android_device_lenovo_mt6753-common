@@ -132,7 +132,7 @@ BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
 ### INIT
-TARGET_INIT_VENDOR_LIB := libinit_mediatek
+TARGET_INIT_VENDOR_LIB := libinit_k5fpr
 
 ### CONFIGS
 # Configure jemalloc for low memory
