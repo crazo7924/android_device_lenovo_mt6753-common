@@ -164,7 +164,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lineage.livedisplay@2.0-service-mtk \
     lineage.touch@1.0-service.lenovo \
-    lineage.trust@1.0-service
+    vendor.lineage.trust@1.0-service
 
 PRODUCT_PACKAGES += \
     Stk \
