@@ -1,46 +1,50 @@
 # init services
 type pq, domain;
 type pq_exec, exec_type, file_type, vendor_file_type;
-
 init_daemon_domain(pq)
 
 type autokd, domain;
 type autokd_exec, exec_type, file_type, vendor_file_type;
-
 init_daemon_domain(autokd)
 
 type dm_agent_binder, domain;
 type dm_agent_binder_exec, exec_type, file_type, vendor_file_type;
-
 init_daemon_domain(dm_agent_binder)
 
 type nvram_agent_binder, domain;
 type nvram_agent_binder_exec, exec_type, file_type, vendor_file_type;
-
 init_daemon_domain(nvram_agent_binder)
 
 type ppl_agent, domain;
 type ppl_agent_exec, exec_type, file_type, vendor_file_type;
-
 init_daemon_domain(ppl_agent)
 
 type MtkCodecService, domain;
 type MtkCodecService_exec, exec_type, file_type, vendor_file_type;
-
 init_daemon_domain(MtkCodecService)
 
 type mnld, domain;
 type mnld_exec, exec_type, file_type, vendor_file_type;
-
 init_daemon_domain(mnld)
 
 type init_thh, domain;
 type init_thh_exec, exec_type, file_type, vendor_file_type;
-
 init_daemon_domain(init_thh)
-
 
 type mxg2320d, domain;
 type mxg2320d_exec, exec_type, file_type, vendor_file_type;
-
 init_daemon_domain(mxg2320d)
+
+type thermald, domain;
+type thermald_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(thermald)
+
+type d66xx_launcher, domain;
+type d66xx_launcher_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(d66xx_launcher)
+
+type teei_daemon, domain;
+type teei_daemon_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(teei_daemon)
+
+

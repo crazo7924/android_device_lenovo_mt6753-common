@@ -4,10 +4,10 @@
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/proinfo   u:object_r:pro_info_device:s0
 /dev/block/mmcblk0 						u:object_r:bootdevice_block_device:s0
 
-/dev/als_ps(/.*)? 						u:object_r:als_ps_device:s0
-/dev/gsensor(/.*)? 						u:object_r:gsensor_device:s0
-/dev/gyroscope(/.*)? 						u:object_r:gyroscope_device:s0
-/dev/mtk-adc-cali(/.*)? 					u:object_r:mtk-adc-cali_device:s0
+/dev/als_ps(/.*)?						u:object_r:als_ps_device:s0
+/dev/gsensor(/.*)?						u:object_r:gsensor_device:s0
+/dev/gyroscope(/.*)?						u:object_r:gyroscope_device:s0
+/dev/mtk-adc-cali(/.*)?						u:object_r:mtk-adc-cali_device:s0
 
 /vendor/bin/hw/android\.hardware\.usb@1\.0-service\.mtk         u:object_r:hal_usb_default_exec:s0
 
@@ -20,3 +20,9 @@
 /vendor/bin/init_thh						u:object_r:init_thh_exec:s0
 /vendor/bin/autokd						u:object_r:autokd_exec:s0
 /vendor/bin/mxg2320d						u:object_r:mxg2320d_exec:s0
+/vendor/bin/thermald                                            u:object_r:thermald_exec:s0
+/vendor/bin/teei_daemon                                         u:object_r:teei_daemon_exec:s0
+/vendor/bin/6620_launcher                                       u:object_r:6620_launcher_exec:s0
+
+/vendor/bin/hw/android.hardware.drm\@1\.1-service\.widevine     u:object_r:hal_android_hardware_widevine_exec:s0
+/vendor/bin/hw/android.hardware.drm\@1\.1-service\.clearkey     u:object_r:service_exec:s0
