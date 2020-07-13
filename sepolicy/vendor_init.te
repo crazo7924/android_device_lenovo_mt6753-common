@@ -14,3 +14,13 @@ allow vendor_init cgroup:file { getattr };
 ### /sys
 # /sys/kernel/debug/tracing/tracing_on
 allow vendor_init debugfs_tracing:file { getattr };
+
+
+#============= hal_drm_default ==============
+allow hal_drm_default vndbinder_device:chr_file { ioctl open read write };
+
+#============= hal_drm_widevine ==============
+allow hal_drm_widevine vndbinder_device:chr_file { ioctl open read write };
+
+#============= init ==============
+allow init socket_device:sock_file { create setattr };
