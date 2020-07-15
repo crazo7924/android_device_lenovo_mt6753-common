@@ -22,5 +22,7 @@ cc_library_shared {
 
     name: "libnvram",
     proprietary: true,
-
+    strip: {
+        none: true,
+    }
 }
