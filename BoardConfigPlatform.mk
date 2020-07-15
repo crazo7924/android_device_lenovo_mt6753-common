@@ -110,8 +110,6 @@ DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/manifest.xml
 
 ### SHIMS
 TARGET_LD_SHIM_LIBS := \
-	/vendor/lib/egl/libGLES_mali.so|/vendor/lib/libshim_egl.so \
-	/vendor/lib64/egl/libGLES_mali.so|/vendor/lib64/libshim_egl.so \
 	/system/lib/liblog.so|/vendor/lib/libshim_xlog.so \
 	/system/lib64/liblog.so|/vendor/lib64libshim_xlog.so \
 	/system/lib/libgui.so|/vendor/lib/libmtkshim_gui.so \

@@ -1,5 +1,3 @@
-
-
 cc_library_shared {
     name: "libmtkshim_gui",
     srcs: ["gui.cpp"],
@@ -59,19 +57,5 @@ cc_library_shared {
         "-Wno-unused-parameter",
     ],
     compile_multilib: "both",
-    proprietary: true,
-}
-
-cc_library_shared {
-    name: "libshim_egl",
-    srcs: ["egl/callstack.cpp"],
-    static_libs: ["libgcc"],
-    shared_libs: [
-        "libm",
-        "libc",
-        "libutilscallstack",
-        "libutils",
-    ],
-    proprietary: true,
-    compile_multilib: "both"
+    proprietary: true
 }
