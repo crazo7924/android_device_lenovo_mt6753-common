@@ -2,6 +2,7 @@
 type pq, domain;
 type pq_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(pq)
+allow pq default_android_service:service_manager { add };
 
 type autokd, domain;
 type autokd_exec, exec_type, file_type, vendor_file_type;
@@ -22,10 +23,12 @@ init_daemon_domain(ppl_agent)
 type MtkCodecService, domain;
 type MtkCodecService_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(MtkCodecService)
+allow MtkCodecService default_android_service:service_manager { add };
 
 type mnld, domain;
 type mnld_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(mnld)
+allow init socket_device:sock_file { unlink };
 
 type init_thh, domain;
 type init_thh_exec, exec_type, file_type, vendor_file_type;
@@ -46,5 +49,5 @@ init_daemon_domain(d66xx_launcher)
 type teei_daemon, domain;
 type teei_daemon_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(teei_daemon)
-
-
+allow teei_daemon system_data_file:file { read open };
+allow teei_daemon system_data_file:chr_file { read write open ioctl };
