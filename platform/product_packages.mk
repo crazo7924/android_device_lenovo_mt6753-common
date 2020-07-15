@@ -74,24 +74,24 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.0-service
+    android.hardware.biometrics.fingerprint@2.1-service
 
 # Vibrator
 PRODUCT_PACKAGES += \
-    android.hardware.vibrator@1.0-service.mtk
+    android.hardware.vibrator@1.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-service.mtk
+    android.hardware.light@2.0-service
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    android.hardware.bluetooth@1.0-service.mtk
+    android.hardware.bluetooth@1.0-service
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl.mtk \
-    android.hardware.audio@2.0-service.mtk \
+    android.hardware.audio@2.0-impl \
+    android.hardware.audio@2.0-service \
     android.hardware.audio.effect@2.0-impl \
     audio.a2dp.default \
     audio.usb.default \
@@ -162,8 +162,8 @@ PRODUCT_PACKAGES += \
 
 # Lineage
 PRODUCT_PACKAGES += \
-    lineage.livedisplay@2.0-service-mtk \
-    lineage.touch@1.0-service.lenovo \
+    vendor.lineage.livedisplay@2.0-service \
+    vendor.lineage.touch@1.0-service \
     vendor.lineage.trust@1.0-service
 
 PRODUCT_PACKAGES += \
@@ -176,7 +176,7 @@ PRODUCT_PACKAGES += \
 
 # Thermal
 PRODUCT_PACKAGES += \
-    android.hardware.thermal@1.0-service.mtk \
+    android.hardware.thermal@1.0-service \
     thermal_manager
 
 # RIL
@@ -194,9 +194,9 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power@1.1-service.mtk
+    android.hardware.power@1.1-service
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl.mtk \
-    android.hardware.sensors@1.0-service.mtk
+    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-service
