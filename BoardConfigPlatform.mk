@@ -119,7 +119,7 @@ DEVICE_MANIFEST_FILE += $(PLATFORM_PATH)/manifest.xml
 ### SHIMS
 TARGET_LD_SHIM_LIBS := \
 	/system/lib/liblog.so|/vendor/lib/libshim_xlog.so \
-	/system/lib64/liblog.so|/vendor/lib64libshim_xlog.so \
+	/system/lib64/liblog.so|/vendor/lib64/libshim_xlog.so \
 	/system/lib/libgui.so|/vendor/lib/libmtkshim_gui.so \
 	/system/lib64/libgui.so|/vendor/lib64/libmtkshim_gui.so \
 	/vendor/lib/hw/audio.primary.mt6753.so|/vendor/lib/libmtkshim_audio.so \
