@@ -21,8 +21,6 @@ allow init socket_device:sock_file { create setattr };
 ## early mount denials
 # sdcard
 allow init tmpfs:lnk_file { create };
-# system and vendor
-allow fsck block_device:blk_file { read open write ioctl };
 # rootfs, protect_f
 allow vendor_init rootfs:dir { write add_name create setattr };
 

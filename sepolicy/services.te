@@ -2,7 +2,6 @@
 type pq, domain;
 type pq_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(pq)
-allow pq default_android_service:service_manager { add };
 
 type autokd, domain;
 type autokd_exec, exec_type, file_type, vendor_file_type;
@@ -23,7 +22,6 @@ init_daemon_domain(ppl_agent)
 type MtkCodecService, domain;
 type MtkCodecService_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(MtkCodecService)
-allow MtkCodecService default_android_service:service_manager { add };
 
 type mnld, domain;
 type mnld_exec, exec_type, file_type, vendor_file_type;
