@@ -52,7 +52,8 @@
  *   Nick Huang (mtk02183)
  *
  ****************************************************************************/
-
+#ifdef __cplusplus
+extern "C" {
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <sys/wait.h>
@@ -66,6 +67,9 @@
 //#include "CFG_file_lid.h"
 #include <dirent.h>
 #include <sys/mount.h>
+}
+#endif
+
 #include <fstab.h>
 #include <cutils/properties.h>
 #include "libnvram_log.h"

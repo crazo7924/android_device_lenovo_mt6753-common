@@ -59,14 +59,16 @@
 #define __NVRAM_LIB_H
 
 #include "CFG_file_public.h"
-#include <stdbool.h>
 #include <time.h>
 #include <mtd/mtd-abi.h>
 
 #ifdef __cplusplus
 extern "C"
+
+#include <stdbool.h>
+
 {
-//#endif
+#endif
 
 #define NVRAM_JOURNAL_HANDLE_SIZE	512
 
@@ -351,7 +353,7 @@ F_INFO NVM_ReadFileVerInfo(int file_lid);
 //GLOBALS AFFECTED
 //		None
 ********************************************************************************/
-//F_ID NVM_GetFileDesc(int file_lid, int *pRecSize, int *pRecNum, bool IsRead);
+F_ID NVM_GetFileDesc(int file_lid, int *pRecSize, int *pRecNum, int IsRead);
 
 /********************************************************************************
 //FUNCTION:
@@ -371,8 +373,7 @@ F_INFO NVM_ReadFileVerInfo(int file_lid);
 //GLOBALS AFFECTED
 //		None
 ********************************************************************************/
-//bool NVM_CloseFileDesc(F_ID iFileID);
-
+int NVM_CloseFileDesc(F_ID FileID);
 
 
 /********************************************************************************
@@ -466,7 +467,7 @@ extern bool nvram_emmc_support();
 extern bool nvram_ecci_c2k_support();
 extern bool nvram_ufs_support();
 
-//#ifdef __cplusplus
+#ifdef __cplusplus
 }
 #endif
 
