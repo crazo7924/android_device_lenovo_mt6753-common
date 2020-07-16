@@ -1,0 +1,1 @@
+allow teei_daemon device:chr_file { ioctl };
