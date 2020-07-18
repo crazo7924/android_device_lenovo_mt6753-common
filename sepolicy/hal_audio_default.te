@@ -1,0 +1,6 @@
+allow hal_audio_default sysfs:file { open read };
+allow hal_audio_default sysfs_switch:file { open read };
+allow hal_audio_default sysfs_switch:dir { search };
+allow hal_audio_default system_data_file:lnk_file { read };
+allow hal_audio_default unlabeled:dir { search };
+allow hal_audio_default unlabeled:file { open read };
