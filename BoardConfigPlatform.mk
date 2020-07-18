@@ -118,7 +118,7 @@ USE_CAMERA_STUB := true
 ### HIDL
 DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
 # Framework manifest
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/framework_manifest.xml
 
 ### SHIMS
 TARGET_LD_SHIM_LIBS := \
