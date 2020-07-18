@@ -138,12 +138,12 @@ typedef struct nvram_journal_handle {
         ALOGD(__VA_ARGS__); \
     } while (0)
 
-//bool NVM_GetBackupFileNum(unsigned int * iAPBackupFileNum,
-//                          unsigned short *iMDBackupFileNum);
+int NVM_GetBackupFileNum(unsigned int * iAPBackupFileNum,
+                         unsigned short *iMDBackupFileNum);
 
-//bool NVM_AddBackupNum(unsigned int iModifiedFileNum, int iSrc);
+int NVM_AddBackupNum(unsigned int iModifiedFileNum, int iSrc);
 
-//bool NVM_AddBackupFileNum(unsigned int iLid);
+int NVM_AddBackupFileNum(unsigned int iLid);
 
 /********************************************************************************
 //FUNCTION:
@@ -184,7 +184,7 @@ int NVM_Init(void);
 //GLOBALS AFFECTED
 //		None
 ********************************************************************************/
-//bool NVM_CheckVerFile(bool In_NVM);
+int NVM_CheckVerFile(int In_NVM);
 
 /********************************************************************************
 //FUNCTION:
@@ -204,7 +204,7 @@ int NVM_Init(void);
 //GLOBALS AFFECTED
 //		None
 ********************************************************************************/
-//bool NVM_GenerateFileVer(bool CPY_File_To_NVM);
+int NVM_GenerateFileVer(int CPY_File_To_NVM);
 
 /********************************************************************************
 //FUNCTION:
@@ -224,7 +224,7 @@ int NVM_Init(void);
 //GLOBALS AFFECTED
 //		None
 ********************************************************************************/
-//bool NVM_CmpFileVerNo(int file_lid);
+int NVM_CmpFileVerNo(int file_lid);
 
 /********************************************************************************
 //FUNCTION:
@@ -245,7 +245,7 @@ int NVM_Init(void);
 //GLOBALS AFFECTED
 //		None
 ********************************************************************************/
-//bool NVM_CheckFileID(int file_lid, int rec_id);
+int NVM_CheckFileID(int file_lid, int rec_id);
 
 /********************************************************************************
 //FUNCTION:
@@ -268,7 +268,7 @@ int NVM_Init(void);
 //GLOBALS AFFECTED
 //		None
 ********************************************************************************/
-//bool NVM_CheckFileInfo(int file_lid, int rec_id);
+int NVM_CheckFileInfo(int file_lid, int rec_id);
 
 /********************************************************************************
 //FUNCTION:
@@ -309,7 +309,7 @@ F_INFO NVM_ReadFileVerInfo(int file_lid);
 //GLOBALS AFFECTED
 //		None
 ********************************************************************************/
-//bool NVM_UpdateFileVerNo(int file_lid, VerInfoUpdateFlag UpdateFlag);
+int NVM_UpdateFileVerNo(int file_lid, VerInfoUpdateFlag UpdateFlag);
 
 /********************************************************************************
 //FUNCTION:
@@ -329,7 +329,7 @@ F_INFO NVM_ReadFileVerInfo(int file_lid);
 //GLOBALS AFFECTED
 //		None
 ********************************************************************************/
-//bool NVM_ResetFileToDefault(int file_lid);
+int NVM_ResetFileToDefault(int file_lid);
 
 /********************************************************************************
 //FUNCTION:
@@ -414,40 +414,38 @@ int NVM_GetLIDByName(char* filename);
 ********************************************************************************/
 
 
-//bool NVM_DataVerConvertAll(unsigned int iOldCommonFileNum,
-//                           unsigned int iOldCustomFileNum);
+int NVM_DataVerConvertAll(unsigned int iOldCommonFileNum,
+		unsigned int iOldCustomFileNum);
 int NVM_DataVerConvert(int file_lid);
-//int NVM_ProtectDataFile(int file_lid, bool Setflag);
-//bool NVM_CheckBackFlag(int iFileDesc);
-//bool NVM_CheckMDBackFlag(int iFileDesc);
-//bool NVM_ComputeBackflagCheckSum(int iFileDesc);
-//bool NVM_RestoreFromBinRegion_OneFile(int file_lid, const char * filename);
-//bool NVM_HistoryLog(unsigned int level, const char *func, unsigned int line,
-//                    const char *log);
-//bool NVM_HistoryLog_Time(unsigned int level, const char *func, unsigned int line,const char *log,unsigned char *time);
+int NVM_ProtectDataFile(int file_lid, int Setflag);
+int NVM_CheckBackFlag(int iFileDesc);
+int NVM_CheckMDBackFlag(int iFileDesc);
+int NVM_ComputeBackflagCheckSum(int iFileDesc);
+int NVM_RestoreFromBinRegion_OneFile(int file_lid, const char * filename);
+int NVM_HistoryLog(unsigned int level, const char *func, unsigned int line, const char *log);
+int NVM_HistoryLog_Time(unsigned int level, const char *func, unsigned int line,const char *log,unsigned char *time);
 unsigned int NVM_GetSequenceNum(void);
-//bool NVM_IncSequenceNum(unsigned int sequence);
-//bool NVM_InSpecialLidList(int file_lid, int *index);
-//bool NVM_CheckFile(const char * filepath);
+int NVM_IncSequenceNum(unsigned int sequence);
+int NVM_InSpecialLidList(int file_lid, int *index);
+int NVM_CheckFile(const char * filepath);
 
 #define NVRAM_HISTORY_LOG(n, log)   NVM_HistoryLog(n, __func__, __LINE__, log)
 #define NVRAM_HISTORY_LOG_TIME(n,time,log)   NVM_HistoryLog_Time(n, __func__, __LINE__, log , time)//add by min
 
-//bool NVM_MiscIncSeqNum(unsigned int sequence);
+int NVM_MiscIncSeqNum(unsigned int sequence);
 unsigned int NVM_MiscGetSeqNum(void);
-//bool NVM_MiscLog(unsigned int level, const char *func, unsigned int line,
-//                 const char *log);
+int NVM_MiscLog(unsigned int level, const char *func, unsigned int line, const char *log);
 #define NVRAM_MISC_LOG(n, log)   NVM_MiscLog(n, __func__, __LINE__, log)
 
-//bool NVM_GetDeviceInfo(const char *path, struct mtd_info_user *device_info);
+int NVM_GetDeviceInfo(const char *path, struct mtd_info_user *device_info);
 extern int init_nvram_platform_callback();
-//extern int nvram_platform_callback();
+//extern int nvram_platform_callback(NVRAM_PLATFORM_T*);
 
-//bool Check_FileVerinFirstBoot(void);
+int Check_FileVerinFirstBoot(void);
 
-//bool Check_UpdateStatus(void);
+int Check_UpdateStatus(void);
 
-//bool NVM_EraseDeviceBlock(const char *path, struct erase_info_user erase_info);
+int NVM_EraseDeviceBlock(const char *path, struct erase_info_user erase_info);
 
 
 typedef struct NVRAM_PLATFORM {
