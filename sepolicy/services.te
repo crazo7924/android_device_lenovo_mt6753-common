@@ -49,3 +49,7 @@ type teei_daemon_exec, exec_type, file_type, vendor_file_type;
 init_daemon_domain(teei_daemon)
 allow teei_daemon system_data_file:file { read open };
 allow teei_daemon system_data_file:chr_file { read write open ioctl };
+
+type gsm0710muxd, domain;
+type gsm0710muxd_exec, exec_type, file_type, vendor_file_type;
+init_daemon_domain(gsm0710muxd);
