@@ -17,12 +17,12 @@
 LOCAL_PATH := $(call my-dir)
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := ueventd.mt6753.rc
-LOCAL_SRC_FILES := ueventd.mt6753.rc
+LOCAL_MODULE := ueventd.mt6735.rc
+LOCAL_SRC_FILES := ueventd.mt6735.rc
 LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE_STEM := ueventd
+LOCAL_MODULE_STEM := ueventd.mt6753
 LOCAL_MODULE_SUFFIX := .rc
 LOCAL_MODULE_CLASS := ETC
-# This needs to be /vendor/ueventd.rc
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR)
+# This needs to be /ueventd.mt6735.rc
+LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
