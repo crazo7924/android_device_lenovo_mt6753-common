@@ -8,8 +8,8 @@ LOCAL_SRC_FILES := \
 #	ge.c
 
 LOCAL_C_INCLUDES := \
-	$(LOCAL_PATH)/libgralloc_extra/include \
-	$(LOCAL_PATH)/hardware/include
+	$(LOCAL_PATH)/include \
+	$(LOCAL_PATH)/include/hardware
 
 LOCAL_SHARED_LIBRARIES := \
     libhardware \
@@ -20,7 +20,7 @@ LOCAL_SHARED_LIBRARIES := \
     libged
 
 LOCAL_EXPORT_C_INCLUDE_DIRS := \
-	$(LOCAL_PATH)/libgralloc_extra/include \
+	$(LOCAL_PATH)/include \
 
 LOCAL_C_INCLUDES += \
 	system/core/libion/include \
