@@ -63,7 +63,7 @@ PRODUCT_PACKAGES += \
     libmmsdkservice.feature \
     android.hardware.camera.provider@2.4-service \
     android.hardware.camera.provider@2.4-impl-legacy \
-    vendor.camera.device@1.0-impl-legacy \
+    camera.device@1.0-impl-legacy \
     Snap
 
 # Managers
@@ -90,7 +90,7 @@ PRODUCT_PACKAGES += \
 
 # Audio
 PRODUCT_PACKAGES += \
-    android.hardware.audio@2.0-impl \
+    android.hardware.audio@2.0-impl.mtk \
     android.hardware.audio@2.0-service.mtk \
     android.hardware.audio.effect@2.0-impl \
     audio.a2dp.default \
@@ -104,6 +104,11 @@ PRODUCT_PACKAGES += \
     libtinymix \
     libtinyxml \
     libfs_mgr
+
+# Charger
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    charger
 
 # USB Hal
 PRODUCT_PACKAGES += \
@@ -162,8 +167,9 @@ PRODUCT_PACKAGES += \
 
 # Lineage
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service \
-    vendor.lineage.touch@1.0-service.lenovo \
+    lineage.livedisplay@2.0-service-mtk \
+    lineage.touch@1.0-service.lenovo \
+    vendor.lineage.livedisplay@2.0-service-mtk \
     vendor.lineage.trust@1.0-service
 
 PRODUCT_PACKAGES += \
@@ -198,5 +204,5 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
+    android.hardware.sensors@1.0-impl.mtk \
     android.hardware.sensors@1.0-service.mtk
