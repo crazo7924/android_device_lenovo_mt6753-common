@@ -6,7 +6,6 @@
 
 /dev/als_ps(/.*)?						u:object_r:als_ps_device:s0
 /dev/gsensor(/.*)?						u:object_r:gsensor_device:s0
-/dev/msensor(/.*)?						u:object_r:msensor_device:s0
 /dev/gyroscope(/.*)?						u:object_r:gyroscope_device:s0
 /dev/mtk-adc-cali(/.*)?						u:object_r:mtk-adc-cali_device:s0
 
@@ -25,7 +24,6 @@
 /(vendor|system/vendor)/bin/gsm0710muxd                                       		u:object_r:gsm0710muxd_exec:s0
 
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power@[0-9]\.[0-9]-service\.mtk 	u:object_r:hal_power_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.sensor@[0-9]\.[0-9]-service\.mtk 	u:object_r:hal_sensor_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@[0-9]\.[0-9]-service\.mtk 	u:object_r:hal_thermal_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.audio@[0-9]\.[0-9]-service\.mtk 	u:object_r:hal_audio_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@[0-9]\.[0-9]-service\.mtk 	u:object_r:hal_bluetooth_default_exec:s0
@@ -33,4 +31,3 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@[0-9]\.[0-9]-service\.mtk 	u:object_r:hal_vibrator_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@[0-9]\.[0-9]-service\.clearkey    u:object_r:hal_drm_clearkey_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@[0-9]\.[0-9]-service\.widevine    u:object_r:hal_drm_widevine_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.usb@1\.0-service\.basic               u:object_r:hal_usb_default_exec:s0
