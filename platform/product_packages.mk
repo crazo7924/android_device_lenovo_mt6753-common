@@ -105,10 +105,11 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libfs_mgr
 
-# Charger
+# Lineage charger
 PRODUCT_PACKAGES += \
-    charger_res_images \
-    charger
+    lineage_charger_res_images \
+    libhealthd.lineage \
+    font_log.png
 
 # USB Hal
 PRODUCT_PACKAGES += \
