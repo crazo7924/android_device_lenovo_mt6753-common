@@ -8,6 +8,7 @@
 /dev/gsensor(/.*)?						u:object_r:gsensor_device:s0
 /dev/gyroscope(/.*)?						u:object_r:gyroscope_device:s0
 /dev/mtk-adc-cali(/.*)?						u:object_r:mtk-adc-cali_device:s0
+/dev/stpbt(/.*)?						u:object_r:hal_bluetooth_default_exec:s0
 
 /(vendor|system/vendor)/bin/ppl_agent							u:object_r:ppl_agent_exec:s0
 /(vendor|system/vendor)/bin/pq								u:object_r:pq_exec:s0
