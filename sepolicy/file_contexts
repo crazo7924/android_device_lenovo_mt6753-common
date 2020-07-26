@@ -1,34 +1,18 @@
-/dev/nvram(/.*)?						u:object_r:nvram_device:s0
+/dev/nvram(/.*)? 						u:object_r:nvram_device:s0
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/nvram     u:object_r:nvram_device:s0
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/nvdata    u:object_r:nvdata_device:s0
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/proinfo   u:object_r:pro_info_device:s0
-/dev/block/mmcblk0						u:object_r:bootdevice_block_device:s0
+/dev/block/mmcblk0 						u:object_r:bootdevice_block_device:s0
 
-/dev/als_ps(/.*)?						u:object_r:als_ps_device:s0
-/dev/gsensor(/.*)?						u:object_r:gsensor_device:s0
-/dev/gyroscope(/.*)?						u:object_r:gyroscope_device:s0
-/dev/mtk-adc-cali(/.*)?						u:object_r:mtk-adc-cali_device:s0
-/dev/stpbt(/.*)?						u:object_r:hal_bluetooth_default_exec:s0
+/dev/als_ps(/.*)? 						u:object_r:als_ps_device:s0
+/dev/gsensor(/.*)? 						u:object_r:gsensor_device:s0
+/dev/gyroscope(/.*)? 						u:object_r:gyroscope_device:s0
+/dev/mtk-adc-cali(/.*)? 					u:object_r:mtk-adc-cali_device:s0
 
-/(vendor|system/vendor)/bin/ppl_agent							u:object_r:ppl_agent_exec:s0
-/(vendor|system/vendor)/bin/pq								u:object_r:pq_exec:s0
-/(vendor|system/vendor)/bin/mnld							u:object_r:mnld_exec:s0
-/(vendor|system/vendor)/bin/MtkCodecService						u:object_r:MtkCodecService_exec:s0
-/(vendor|system/vendor)/bin/nvram_agent_binder						u:object_r:nvram_agent_binder_exec:s0
-/(vendor|system/vendor)/bin/dm_agent_binder						u:object_r:dm_agent_binder_exec:s0
-/(vendor|system/vendor)/bin/init_thh							u:object_r:init_thh_exec:s0
-/(vendor|system/vendor)/bin/autokd							u:object_r:autokd_exec:s0
-/(vendor|system/vendor)/bin/mxg2320d							u:object_r:mxg2320d_exec:s0
-/(vendor|system/vendor)/bin/thermald                                           		u:object_r:thermald_exec:s0
-/(vendor|system/vendor)/bin/teei_daemon                                        		u:object_r:teei_daemon_exec:s0
-/(vendor|system/vendor)/bin/6620_launcher                                       	u:object_r:d66xx_launcher_exec:s0
-/(vendor|system/vendor)/bin/gsm0710muxd                                       		u:object_r:gsm0710muxd_exec:s0
-
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power@[0-9]\.[0-9]-service\.mtk 	u:object_r:hal_power_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@[0-9]\.[0-9]-service\.mtk 	u:object_r:hal_thermal_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.audio@[0-9]\.[0-9]-service\.mtk 	u:object_r:hal_audio_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@[0-9]\.[0-9]-service\.mtk 	u:object_r:hal_bluetooth_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@[0-9]\.[0-9]-service\.mtk 	u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@[0-9]\.[0-9]-service\.mtk 	u:object_r:hal_vibrator_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@[0-9]\.[0-9]-service\.clearkey    u:object_r:hal_drm_clearkey_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.drm@[0-9]\.[0-9]-service\.widevine    u:object_r:hal_drm_widevine_exec:s0
+# android hardware services
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@[0-9]\.[0-9]-service\.mtk       u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@[0-9]\.[0-9]-service\.mtk     u:object_r:hal_thermal_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.audio@[0-9]\.[0-9]-service\.mtk       u:object_r:hal_audio_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@[0-9]\.[0-9]-service\.mtk   u:object_r:hal_bluetooth_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.light@[0-9]\.[0-9]-service\.mtk       u:object_r:hal_light_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@[0-9]\.[0-9]-service\.mtk    u:object_r:hal_vibrator_default_exec:s0
