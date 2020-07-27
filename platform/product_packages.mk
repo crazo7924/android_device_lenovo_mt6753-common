@@ -16,7 +16,7 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    ueventd.mt6753.rc
+    ueventd.mt6735.rc
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
