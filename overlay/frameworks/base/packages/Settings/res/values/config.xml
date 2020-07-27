@@ -18,16 +18,6 @@
 -->
 
 <resources>
-    <!-- Doze: does this device support STATE_DOZE?
-         The display is dozing in a low power state; it is still on but is
-         optimized for showing system-provided content while the device is
-         non-interactive. -->
-    <bool name="doze_display_state_supported">true</bool>
-    
-    <!-- Doze: should the pickup sensor be used as a pulse signal? -->
-    <bool name="doze_pulse_on_pick_up">true</bool>
-
-    <!-- Doze: can we assume the pickup sensor includes a proximity check? -->
-    <bool name="doze_pickup_performs_proximity_check">false</bool>
-
+    <!-- When true enable gesture setting. -->
+    <bool name="config_gesture_settings_enabled">true</bool>
 </resources>
