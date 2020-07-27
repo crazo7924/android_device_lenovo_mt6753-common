@@ -14,6 +14,10 @@ PRODUCT_PACKAGES += \
     mkfs.ntfs \
     mount.ntfs
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    ueventd.mt6753.rc
+
 # Keymaster HAL
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl
@@ -109,6 +113,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     lineage_charger_res_images \
     libhealthd.lineage \
+    charger \
     font_log.png
 
 # USB Hal
@@ -166,7 +171,7 @@ PRODUCT_PACKAGES += \
     libgralloc_extra \
     libgui_ext
 
-# Lineage
+# Lineage services
 PRODUCT_PACKAGES += \
     lineage.livedisplay@2.0-service-mtk \
     lineage.touch@1.0-service.lenovo \
