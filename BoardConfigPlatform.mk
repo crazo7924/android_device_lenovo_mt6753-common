@@ -70,21 +70,13 @@ BOARD_MKBOOTIMG_ARGS += --board A7010
 # build/make/core/config.mk
 TARGET_USES_64_BIT_BINDER := true
 
-### VNDK
-# BOARD_VNDK_VERSION := current
-
 ### SYSTEM
-BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
 # system/core and build/make
 AB_OTA_UPDATER := false
 BLOCK_BASED_OTA := true
 
 ### VENDOR
-BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 TARGET_COPY_OUT_VENDOR := vendor
-
-### CACHE
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 
 ### AUDIO
 USE_XML_AUDIO_POLICY_CONF := 1
@@ -94,7 +86,6 @@ TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
 ### CHARGER
 BOARD_CHARGER_ENABLE_SUSPEND := true
-BOARD_CHARGER_SHOW_PERCENTAGE := true
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
 ### BOOT-ANIMATION
@@ -115,9 +106,6 @@ MAX_VIRTUAL_DISPLAY_DIMENSION := 1
 
 # Text layout engine
 USE_MINIKIN := true
-
-### FS
-TARGET_USES_MKE2FS := true
 
 ### CAMERA
 TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
@@ -191,4 +179,5 @@ BUILD_BROKEN_DUP_RULES := true
 ### RECOVERY
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
 TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/recovery.fstab
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file"
 LZMA_RAMDISK_TARGETS := boot, recovery
