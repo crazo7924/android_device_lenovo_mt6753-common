@@ -14,19 +14,17 @@
  * limitations under the License.
  */
 
-#include <dlfcn.h>
-
 #ifdef LIVES_IN_SYSTEM
-#define LOG_TAG "lineage.livedisplay@2.0-service-mtk"
+#define LOG_TAG "lineage.livedisplay@2.0-service-mediatek"
 #else
-#define LOG_TAG "vendor.lineage.livedisplay@2.0-service-mtk"
+#define LOG_TAG "vendor.lineage.livedisplay@2.0-service-mediatek"
 #endif
 
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>
 #include <hidl/HidlTransportSupport.h>
 
-#include "AdaptiveBacklight.h"
+#include "DisplayColorCalibration.h"
 
 using android::OK;
 using android::sp;
@@ -34,56 +32,40 @@ using android::status_t;
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
-using ::vendor::lineage::livedisplay::V2_0::IAdaptiveBacklight;
-//using ::vendor::lineage::livedisplay::V2_0::IPictureAdjustment;
-using ::vendor::lineage::livedisplay::V2_0::mtk::AdaptiveBacklight;
-//using ::vendor::lineage::livedisplay::V2_0::mtk::PictureAdjustment;
+using ::vendor::lineage::livedisplay::V2_0::IDisplayColorCalibration;
+using ::vendor::lineage::livedisplay::V2_0::mediatek::DisplayColorCalibration;
 
 int main() {
-    // HIDL frontend
-    sp<AdaptiveBacklight> ab;
-    //sp<PictureAdjustment> pa;
+    // HALs
+    sp<DisplayColorCalibration> dcc;
 
     status_t status = OK;
 
-#ifdef LIVES_IN_SYSTEM
-    android::ProcessState::initWithDriver("/dev/binder");
-#else
-    android::ProcessState::initWithDriver("/dev/vndbinder");
-#endif
-
     LOG(INFO) << "LiveDisplay HAL service is starting.";
 
-    ab = new AdaptiveBacklight();
-    if (ab == nullptr) {
-        LOG(ERROR)
-            << "Can not create an instance of LiveDisplay HAL AdaptiveBacklight Iface, exiting.";
+    dcc = new DisplayColorCalibration();
+    if (dcc == nullptr) {
+        LOG(ERROR) << "Can not create an instance of LiveDisplay HAL DisplayColorCalibration Iface,"
+                   << " exiting.";
+        goto shutdown;
     }
-
-    /*pa = new PictureAdjustment(libHandle, cookie);
-    if (pa == nullptr) {
-        LOG(ERROR)
-            << "Can not create an instance of LiveDisplay HAL PictureAdjustment Iface, exiting.";
-    }*/
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
-    status = ab->registerAsService();
-    if (status != OK) {
-        LOG(ERROR) << "Could not register service for LiveDisplay HAL AdaptiveBacklight Iface ("
-                   << status << ")";
+    if (dcc->isSupported()) {
+        status = dcc->registerAsService();
+        if (status != OK) {
+            LOG(ERROR) << "Could not register service for LiveDisplay HAL DisplayColorCalibration"
+                       << " Iface (" << status << ")";
+            goto shutdown;
+        }
     }
-
-    /*status = pa->registerAsService();
-    if (status != OK) {
-        LOG(ERROR) << "Could not register service for LiveDisplay HAL PictureAdjustment Iface ("
-                   << status << ")";
-    }*/
 
     LOG(INFO) << "LiveDisplay HAL service is ready.";
     joinRpcThreadpool();
     // Should not pass this line
 
+shutdown:
     // In normal operation, we don't expect the thread pool to shutdown
     LOG(ERROR) << "LiveDisplay HAL service is shutting down.";
     return 1;

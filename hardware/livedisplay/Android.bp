@@ -12,36 +12,24 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-cc_defaults {
-    name: "livedisplay_mtk_defaults",
-    defaults: ["hidl_defaults"],
+cc_binary {
+    name: "vendor.lineage.livedisplay@2.0-service-mediatek",
+    init_rc: ["vendor.lineage.livedisplay@2.0-service-mediatek.rc"],
     relative_install_path: "hw",
-    srcs: [
-        "AdaptiveBacklight.cpp",
-        "service.cpp",
-    ],
+    proprietary: true,
     shared_libs: [
         "libbase",
         "libbinder",
         "libcutils",
-        "libdl",
         "libhidlbase",
         "libhidltransport",
         "libutils",
         "vendor.lineage.livedisplay@2.0",
     ],
-}
 
-cc_binary {
-    name: "lineage.livedisplay@2.0-service-mtk",
-    init_rc: ["lineage.livedisplay@2.0-service-mtk.rc"],
-    defaults: ["livedisplay_mtk_defaults"],
-    cflags: ["-DLIVES_IN_SYSTEM"],
-}
+    srcs: [
+        "DisplayColorCalibration.cpp",
+        "service.cpp",
+    ],
 
-cc_binary {
-    name: "vendor.lineage.livedisplay@2.0-service-mtk",
-    init_rc: ["vendor.lineage.livedisplay@2.0-service-mtk.rc"],
-    defaults: ["livedisplay_mtk_defaults"],
-    vendor: true,
 }
