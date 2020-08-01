@@ -93,6 +93,13 @@ const char CameraParameters::KEY_VIDEO_SNAPSHOT_SUPPORTED[] = "video-snapshot-su
 const char CameraParameters::KEY_VIDEO_STABILIZATION[] = "video-stabilization";
 const char CameraParameters::KEY_VIDEO_STABILIZATION_SUPPORTED[] = "video-stabilization-supported";
 const char CameraParameters::KEY_LIGHTFX[] = "light-fx";
+const char CameraParameters::KEY_SNAPSHOT_PICTURE_FLIP[] = "snapshot-picture-filp";
+const char CameraParameters::KEY_FLIP[] = "flip";
+const char CameraParameters::KEY_SMARTSKIN[] = "smartskin";
+const char CameraParameters::KEY_WHITENING[] = "whitening";
+const char CameraParameters::KEY_ENABLEACCESS[] = "enableaccess";
+const char CameraParameters::KEY_LARGE_EYES[] = "large-eyes";
+const char CameraParameters::KEY_ENABLENIGHTSHOT[] = "enablenightshot"; 
 
 const char CameraParameters::TRUE[] = "true";
 const char CameraParameters::FALSE[] = "false";
