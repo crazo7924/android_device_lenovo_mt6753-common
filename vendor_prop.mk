@@ -18,10 +18,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.gemini.sim_num=2 \
     ro.gemini.smart_sim_switch=false
 
-# Maintainer
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.havoc.maintainer=DidntRead
-
 # NFC
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.nfc.port=I2C
@@ -77,7 +73,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \
-    camera.disable_zsl_mode=1 \
     ro.sf.hwrotation=0 \
     ro.oem_unlock_supported=1
 

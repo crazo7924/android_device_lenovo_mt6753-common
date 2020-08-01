@@ -21,7 +21,7 @@ TARGET_BOARD_PLATFORM := mt6753
 TARGET_BOARD_SUFFIX := _64
 TARGET_SOC := mt6753
 TARGET_BOOTLOADER_BOARD_NAME := mt6753
-TARGET_BOARD_PLATFORM_GPU := mali-t720
+TARGET_BOARD_PLATFORM_GPU := mali-t720mp4
 
 # build/make/core/Makefile
 TARGET_NO_BOOTLOADER := true
@@ -84,8 +84,13 @@ USE_XML_AUDIO_POLICY_CONF := 1
 # Disable memcpy opt (for audio libraries)
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
+### MALLOC
+# Use dlmalloc instead of jemalloc for mallocs
+MALLOC_SVELTE := true
+
 ### CHARGER
 BOARD_CHARGER_ENABLE_SUSPEND := true
+BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
 ### BOOT-ANIMATION
@@ -111,7 +116,7 @@ USE_MINIKIN := true
 TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 TARGET_USES_NON_TREBLE_CAMERA := true
 USE_CAMERA_STUB := true
-
+TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_mtk
 ### HIDL
 DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
 # Framework manifest

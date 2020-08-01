@@ -78,7 +78,7 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service
+    android.hardware.biometrics.fingerprint@2.0-service
 
 # Vibrator
 PRODUCT_PACKAGES += \
@@ -173,9 +173,9 @@ PRODUCT_PACKAGES += \
 
 # Lineage services
 PRODUCT_PACKAGES += \
-    lineage.livedisplay@2.0-service-mtk \
+    lineage.livedisplay@2.0-service-mediatek \
     lineage.touch@1.0-service.lenovo \
-    vendor.lineage.livedisplay@2.0-service-mtk \
+    vendor.lineage.livedisplay@2.0-service-mediatek \
     vendor.lineage.trust@1.0-service
 
 PRODUCT_PACKAGES += \
