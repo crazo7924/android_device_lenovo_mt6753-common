@@ -633,6 +633,21 @@ public:
 
     // post-view
     static const char KEY_POST_VIEW_FMT[];
+    
+    // flip
+    static const char KEY_SNAPSHOT_PICTURE_FLIP[];
+    static const char KEY_FLIP[];
+
+    // additional beauty modes
+    static const char KEY_SMARTSKIN[];
+    static const char KEY_WHITENING[];
+    static const char KEY_LARGE_EYES[];
+
+    // enable access
+    static const char KEY_ENABLEACCESS[];
+
+    // enable night-shot
+    static const char KEY_ENABLENIGHTSHOT[];
 
 public:     ////    on/off => FIXME: should be replaced with TRUE[]
     static const char ON[];
