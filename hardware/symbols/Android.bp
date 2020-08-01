@@ -23,10 +23,7 @@ cc_library_shared {
 
 cc_library_shared {
     name: "libmtkshim_camera",
-    srcs: [
-        "camera/CameraParameters.cpp",
-        "camera/camera.cpp",
-    ],
+    srcs: ["camera.cpp"],
     shared_libs: [
         "libdpframework",
         "libutils",
