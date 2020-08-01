@@ -73,6 +73,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Misc
 PRODUCT_PROPERTY_OVERRIDES += \
+    camera.disable_zsl_mode =1 \
     ro.sf.hwrotation=0 \
     ro.oem_unlock_supported=1
 
