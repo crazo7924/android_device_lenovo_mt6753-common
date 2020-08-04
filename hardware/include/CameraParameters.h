@@ -542,6 +542,23 @@ public:
     // Example values: "lowlight,hdr".
     static const char KEY_LIGHTFX[];
 
+    /* Mtk specific */
+    // flip
+    static const char KEY_SNAPSHOT_PICTURE_FLIP[];
+    static const char KEY_FLIP[];
+
+    // additional beauty modes
+    static const char KEY_SMARTSKIN[];
+    static const char KEY_WHITENING[];
+    static const char KEY_LARGE_EYES[];
+
+    // enable access
+    static const char KEY_ENABLEACCESS[];
+
+    // enable night-shot
+    static const char KEY_ENABLENIGHTSHOT[];
+    /* End: Mtk specific */
+
     // Value for KEY_ZOOM_SUPPORTED or KEY_SMOOTH_ZOOM_SUPPORTED.
     static const char TRUE[];
     static const char FALSE[];
