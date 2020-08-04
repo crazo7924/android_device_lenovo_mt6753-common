@@ -111,7 +111,7 @@ PRODUCT_PACKAGES += \
 
 # Lineage charger
 PRODUCT_PACKAGES += \
-    lineage_charger_res_images \
+    charger_res_images \
     libhealthd.lineage \
     charger \
     font_log.png
@@ -212,3 +212,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.mtk \
     android.hardware.sensors@1.0-service.mtk
+
+# IMS
+# PRODUCT_PACKAGES += \
+    okhttp \
+    ims-config \
+    ImsService \
+    Simservs \
+    xcap \
+    wfo-common \
+    libwfo_jni \
+    WfoService
+

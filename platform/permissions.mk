@@ -44,3 +44,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.google.android.nfc_extras.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml
 
+PRODUCT_COPY_FILES += \
+    $(PLATFORM_PATH)/ims/telephony_mediatek-ims_privapp-permissions.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/telephony_mediatek-ims_privapp-permissions.xml
+

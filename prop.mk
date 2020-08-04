@@ -16,3 +16,13 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 # Tethering
 PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
+
+# Ims
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.mtk_ims_support=1 \
+    ro.mtk_volte_support=1 \
+    persist.mtk.volte.enable=1 \
+    ro.mtk_vilte_support=1 \
+    persist.mtk.ims.video.enable=1 \
+    ro.mtk_vilte_ut_support=0 \
+    persist.mtk_dynamic_ims_switch=1
