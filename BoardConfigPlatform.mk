@@ -58,7 +58,6 @@ BOARD_KERNEL_PAGESIZE        := 2048
 BOARD_KERNEL_IMAGE_NAME      := Image.gz-dtb
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 firmware_class.path=/vendor/firmware
-BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 BOARD_MKBOOTIMG_ARGS := --base 0x40078000
 BOARD_MKBOOTIMG_ARGS += --pagesize 2048
