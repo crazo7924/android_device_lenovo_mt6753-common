@@ -173,8 +173,7 @@ PRODUCT_PACKAGES += \
 
 # Lineage services
 PRODUCT_PACKAGES += \
-    lineage.livedisplay@2.0-service-mediatek \
-    lineage.touch@1.0-service.lenovo \
+    vendor.lineage.touch@1.0-service.lenovo \
     vendor.lineage.livedisplay@2.0-service-mediatek \
     vendor.lineage.trust@1.0-service
 
