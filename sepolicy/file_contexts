@@ -4,12 +4,15 @@
 /dev/block/platform/mtk-msdc.0/11230000.msdc0/by-name/nvdata    u:object_r:nvdata_device:s0
 
 # android hardware services
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power@[0-9]\.[0-9]-service\.mtk       u:object_r:hal_power_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.thermal@[0-9]\.[0-9]-service\.mtk     u:object_r:hal_thermal_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.audio@[0-9]\.[0-9]-service\.mtk       u:object_r:hal_audio_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.bluetooth@[0-9]\.[0-9]-service\.mtk   u:object_r:hal_bluetooth_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.light@[0-9]\.[0-9]-service\.mtk       u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.vibrator@[0-9]\.[0-9]-service\.mtk    u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.power@[0-9]\.[0-9]-service\.mtk       u:object_r:hal_power_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.thermal@[0-9]\.[0-9]-service\.mtk     u:object_r:hal_thermal_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.audio@[0-9]\.[0-9]-service\.mtk       u:object_r:hal_audio_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.bluetooth@[0-9]\.[0-9]-service\.mtk   u:object_r:hal_bluetooth_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.light@[0-9]\.[0-9]-service\.mtk       u:object_r:hal_light_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.vibrator@[0-9]\.[0-9]-service\.mtk    u:object_r:hal_vibrator_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/android\.hardware\.vibrator@[0-9]\.[0-9]-service\.mtk    u:object_r:hal_power_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/vendor\.lineage\.livedisplay@[0-9]\.[0-9]-service\.mtk   u:object_r:hal_lineage_livedisplay_default_exec:s0
+/(vendor|system\/vendor)/bin/hw/vendor\.lineage\.touch@[0-9]\.[0-9]-service\.lenovo      u:object_r:hal_lineage_touch_sysfs_exec:s0
 
 # Services
 /(system\/vendor|vendor)/bin/6620_launcher               u:object_r:wmt_launcher_exec:s0
@@ -38,7 +41,7 @@
 /(system\/vendor|vendor)/bin/ged_srv                     u:object_r:ged_srv_exec:s0
 /(system\/vendor|vendor)/bin/spm_loader                  u:object_r:spm_loader_exec:s0
 /(system\/vendor|vendor)/bin/teed                        u:object_r:tkcore_exec:s0
-/(system\/vendor|vendor)/bin/hw/vendor.mediatek.hardware.power@1.1-service           u:object_r:mtk_hal_power_exec:s0
+
 /(system\/vendor|vendor)/bin/hw/vendor.mediatek.hardware.pq@2.0-service              u:object_r:mtk_hal_pq_exec:s0
 
 # Files from firmware/nv partitions
