@@ -1,3 +1,4 @@
+#
 # Copyright (C) 2020 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
@@ -11,13 +12,45 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
+#
 
 BUILD_TOP := $(shell pwd)
 
-PLATFORM_PATH := device/lenovo/mt6753-common
+# Device path
+DEVICE_PATH := device/lenovo/k5fpr
 
-### BOARD
-TARGET_BOARD_PLATFORM := mt6753
+# Kernel
+TARGET_KERNEL_CONFIG := k5fpr_defconfig
+TARGET_KERNEL_SOURCE = kernel/lenovo/k5fpr/
+
+# OTA assert
+TARGET_OTA_ASSERT_DEVICE := k5fpr
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
+
+# Partitions informations
+BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 16777216
+BOARD_CACHEIMAGE_PARTITION_SIZE := 419430400
+BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2684354560
+BOARD_SYSTEMIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 11733020672 # 11733041152 - 20480
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_VENDORIMAGE_PARTITION_SIZE := 539492352
+BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
+BOARD_FLASH_BLOCK_SIZE := 4096
+
+# Partitions type
+TARGET_USERIMAGES_USE_EXT4 := true
+TARGET_USERIMAGES_USE_F2FS := true
+
+# DT2W node
+POWER_FEATURE_DOUBLE_TAP_TO_WAKE := "/sys/lenovo_tp_gestures/tpd_suspend_status"
+
+# Board
+TARGET_BOARD_PLATFORM := mt6735
 TARGET_BOARD_SUFFIX := _64
 TARGET_SOC := mt6753
 TARGET_BOOTLOADER_BOARD_NAME := mt6753
@@ -26,7 +59,7 @@ TARGET_BOARD_PLATFORM_GPU := mali-t720
 # build/make/core/Makefile
 TARGET_NO_BOOTLOADER := true
 
-### PROCESSOR
+# CPU Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a
 TARGET_CPU_ABI := arm64-v8a
@@ -46,16 +79,18 @@ ENABLE_SCHEDBOOST := true
 ARCH_ARM_HAVE_NEON := true
 ARCH_ARM_HAVE_VFP := true
 
-### RENDERSCRIPT
+# Custom RenderScript
 OVERRIDE_RS_DRIVER := libRSDriver_mtk.so
 
-### HARDWARE INCLUDE
-TARGET_SPECIFIC_HEADER_PATH := $(PLATFORM_PATH)/hardware/include
+# HW headers
+TARGET_SPECIFIC_HEADER_PATH := $(DEVICE_PATH)/hardware/include
 
-### KERNEL
-BOARD_KERNEL_BASE            := 0x40078000
-BOARD_KERNEL_PAGESIZE        := 2048
-BOARD_KERNEL_IMAGE_NAME      := Image.gz-dtb
+# Kernel
+TARGET_KERNEL_CONFIG := k5fpr_defconfig
+TARGET_KERNEL_SOURCE := kernel/lenovo/k5fpr/
+BOARD_KERNEL_BASE := 0x40078000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 
 BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2 firmware_class.path=/vendor/firmware
 BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
@@ -68,42 +103,38 @@ BOARD_MKBOOTIMG_ARGS += --second_offset 0x00e88000
 BOARD_MKBOOTIMG_ARGS += --tags_offset 0x0df88000
 BOARD_MKBOOTIMG_ARGS += --board A7010
 
-### BINDER
-# build/make/core/config.mk
+# 64-bit Binder
 TARGET_USES_64_BIT_BINDER := true
 
-### SYSTEM
-# system/core and build/make
+# System
 AB_OTA_UPDATER := false
 BLOCK_BASED_OTA := true
 
-### VENDOR
+# Seperate vendor
 TARGET_COPY_OUT_VENDOR := vendor
 
-### AUDIO
+# Audio policy format
 USE_XML_AUDIO_POLICY_CONF := 1
 
 # Disable memcpy opt (for audio libraries)
 TARGET_CPU_MEMCPY_OPT_DISABLE := true
 
-### MALLOC
 # Use dlmalloc instead of jemalloc for mallocs
 MALLOC_SVELTE := true
 
-### CHARGER
+# Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGING_MODE_BOOTING_LPM := /sys/class/BOOT/BOOT/boot/boot_mode
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 
-### BOOT-ANIMATION
+# Boot animation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
-### BLUETOOTH
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(PLATFORM_PATH)/hardware/bluetooth
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/hardware/bluetooth
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
 
-### GRAPHICS
 # Display
 SF_VSYNC_EVENT_PHASE_OFFSET_NS := -8000000
 VSYNC_EVENT_PHASE_OFFSET_NS := -8000000
@@ -114,19 +145,18 @@ MAX_VIRTUAL_DISPLAY_DIMENSION := 1
 # Text layout engine
 USE_MINIKIN := true
 
-### CAMERA
+# Camera
 TARGET_HAS_LEGACY_CAMERA_HAL1 := true
 TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 TARGET_USES_NON_TREBLE_CAMERA := true
 USE_CAMERA_STUB := true
 TARGET_SPECIFIC_CAMERA_PARAMETER_LIBRARY := libcamera_parameters_mtk
 
-### HIDL
-DEVICE_MANIFEST_FILE := $(PLATFORM_PATH)/manifest.xml
-# Framework manifest
-DEVICE_FRAMEWORK_MANIFEST_FILE := $(PLATFORM_PATH)/framework_manifest.xml
+# Manifests
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
 
-### SHIMS
+# Shims
 TARGET_LD_SHIM_LIBS := \
 	/system/lib/liblog.so|/vendor/lib/libshim_xlog.so \
 	/system/lib64/liblog.so|/vendor/lib64/libshim_xlog.so \
@@ -141,13 +171,13 @@ TARGET_LD_SHIM_LIBS := \
 	/vendor/lib/libcam.camnode.so|/vendor/lib/libmtkshim_camera.so \
 	/vendor/lib64/libcam.camnode.so|/vendor/lib64/libmtkshim_camera.so
 
-### SEPOLICY
-BOARD_SEPOLICY_DIRS += $(PLATFORM_PATH)/sepolicy
+# sepolicy
+BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
-### PROPERTIES
+# split properties
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
 
-### INIT
+# custom libinit
 TARGET_INIT_VENDOR_LIB := libinit_k5fpr
 
 # MTK Hardware flags
@@ -161,7 +191,7 @@ BOARD_EGL_WORKAROUND_BUG_10194508 := true
 # Legacy blobs
 TARGET_NEEDS_PLATFORM_TEXT_RELOCATIONS := true
 
-### WIFI
+# WiFi
 BOARD_WLAN_DEVICE		 := MediaTek
 BOARD_CONNECTIVITY_VENDOR        := MediaTek
 WPA_SUPPLICANT_VERSION           := VER_0_8_X
@@ -177,16 +207,17 @@ WIFI_DRIVER_STATE_CTRL_PARAM	 := "/dev/wmtWifi"
 WIFI_DRIVER_STATE_ON		 := 1
 WIFI_DRIVER_STATE_OFF		 := 0
 
-### RIL
 # Use stock RIL stack
 ENABLE_VENDOR_RIL_SERVICE := true
 BOARD_PROVIDES_LIBRIL := true
 
-### ALLOW VENDOR FILE OVERRIDE
+# Allow duplicate rules
 BUILD_BROKEN_DUP_RULES := true
 
-### RECOVERY
+# Recovery
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBA_8888"
-TARGET_RECOVERY_FSTAB := $(PLATFORM_PATH)/rootdir/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/recovery.fstab
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/mt_usb/musb-hdrc.0.auto/gadget/lun%d/file"
+
+# lzma ramdisk
 LZMA_RAMDISK_TARGETS := boot, recovery
