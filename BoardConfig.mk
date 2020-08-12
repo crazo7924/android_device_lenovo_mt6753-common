@@ -19,15 +19,8 @@ BUILD_TOP := $(shell pwd)
 # Device path
 DEVICE_PATH := device/lenovo/k5fpr
 
-# Kernel
-TARGET_KERNEL_CONFIG := k5fpr_defconfig
-TARGET_KERNEL_SOURCE = kernel/lenovo/k5fpr/
-
 # OTA assert
 TARGET_OTA_ASSERT_DEVICE := k5fpr
-
-# Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 
 # Partitions informations
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216
@@ -132,7 +125,7 @@ TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/hardware/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/hardware/include/
 BOARD_BLUETOOTH_DOES_NOT_USE_RFKILL := true
 
 # Display
