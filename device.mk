@@ -210,7 +210,7 @@ PRODUCT_PACKAGES += \
     libfs_mgr
 
 # FM Radio
-PRODUCT_PACKAGES += \
+# PRODUCT_PACKAGES += \
     android.hardware.broadcastradio@1.0-impl \
     FMRadio \
     libfmjni
