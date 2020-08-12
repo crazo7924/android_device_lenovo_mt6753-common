@@ -91,7 +91,8 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.google.android.nfc_extras.xml \
     frameworks/native/data/etc/com.android.nfc_extras.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/com.android.nfc_extras.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.audio.low_latency.xml \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml	
+    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml \
+    frameworks/native/data/etc/android.hardware.camera.manual_sensor.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.camera.manual_sensor.xml
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
@@ -160,10 +161,14 @@ PRODUCT_PACKAGES += \
     libcamera_parameters_mtk \
     libcam.client \
     libmmsdkservice.feature \
-    android.hardware.camera.provider@2.4-service \
-    android.hardware.camera.provider@2.4-impl-legacy \
-    camera.device@1.0-impl-legacy \
     Snap
+
+# Camera HAL
+PRODUCT_PACKAGES += \
+    camera.device@1.0-impl \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service
 
 # Managers
 PRODUCT_PACKAGES += \
@@ -204,12 +209,17 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libfs_mgr
 
-# Lineage charger
+# FM Radio
 PRODUCT_PACKAGES += \
-    charger_res_images \
-    libhealthd.lineage \
-    charger \
-    font_log.png
+    android.hardware.broadcastradio@1.0-impl \
+    FMRadio \
+    libfmjni
+
+# charger images
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/charger/res/values/charger/animation.txt:root/res/values/charger/animation.txt \
+    $(DEVICE_PATH)/charger/res/images/my_battery_scale.png:root/res/images/my_battery_scale.png \
+    $(DEVICE_PATH)/charger/res/images/font_log.png:root/res/images/font_log.png
 
 # USB Hal
 PRODUCT_PACKAGES += \
