@@ -18,7 +18,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     net.tethering.noprovisioning=true
 
 # Ims
-PRODUCT_PROPERTY_OVERRIDES += \
+# PRODUCT_PROPERTY_OVERRIDES += \
     ro.mtk_ims_support=1 \
     ro.mtk_volte_support=1 \
     persist.mtk.volte.enable=1 \
