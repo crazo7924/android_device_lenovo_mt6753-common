@@ -317,6 +317,10 @@ PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.mtk \
     android.hardware.sensors@1.0-service.mtk
 
+# Swap
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/enableswap.sh:root/enableswap.sh
+
 # IMS
 # PRODUCT_PACKAGES += \
     okhttp \
