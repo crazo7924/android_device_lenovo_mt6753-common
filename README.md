@@ -1,3 +1,5 @@
-# MT6753 Platform tree
+# Lenovo K4 Note
 
-credits - DidntRead, SahilSonar, mohancm
+A7010a48, k5fpr
+
+credits - DidntRead, SahilSonar, mohancm, danielhk

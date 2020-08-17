@@ -1,6 +1,5 @@
 LOCAL_PATH := $(call my-dir)
 
-
 include $(CLEAR_VARS)
 LOCAL_MULTILIB := 32
 LOCAL_MODULE_TAGS := optional

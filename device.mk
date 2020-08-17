@@ -112,7 +112,8 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    ueventd.mt6735.rc
+    ueventd.mt6735.rc \
+    init.recovery.mt6735.rc
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
@@ -209,17 +210,10 @@ PRODUCT_PACKAGES += \
     libtinyxml \
     libfs_mgr
 
-# FM Radio
-# PRODUCT_PACKAGES += \
-    android.hardware.broadcastradio@1.0-impl \
-    FMRadio \
-    libfmjni
-
-# charger images
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/charger/res/values/charger/animation.txt:root/res/values/charger/animation.txt \
-    $(DEVICE_PATH)/charger/res/images/my_battery_scale.png:root/res/images/my_battery_scale.png \
-    $(DEVICE_PATH)/charger/res/images/font_log.png:root/res/images/font_log.png
+# Offline charging
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
 
 # USB Hal
 PRODUCT_PACKAGES += \
@@ -279,7 +273,7 @@ PRODUCT_PACKAGES += \
 # Lineage services
 PRODUCT_PACKAGES += \
     vendor.lineage.touch@1.0-service.lenovo \
-    vendor.lineage.livedisplay@2.0-service-mediatek \
+    vendor.lineage.livedisplay@2.0-service.mtk \
     vendor.lineage.trust@1.0-service
 
 PRODUCT_PACKAGES += \
@@ -316,10 +310,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl.mtk \
     android.hardware.sensors@1.0-service.mtk
-
-# Swap
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/rootdir/enableswap.sh:root/enableswap.sh
 
 # IMS
 # PRODUCT_PACKAGES += \

@@ -26,3 +26,14 @@ LOCAL_MODULE_CLASS := ETC
 # This needs to be /ueventd.mt6735.rc
 LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT)
 include $(BUILD_PREBUILT)
+
+include $(CLEAR_VARS)
+LOCAL_MODULE := init.recovery.mt6735.rc
+LOCAL_SRC_FILES := init.recovery.mt6735.rc
+LOCAL_MODULE_TAGS := optional
+LOCAL_MODULE_STEM := init.recovery.mt6735
+LOCAL_MODULE_SUFFIX := .rc
+LOCAL_MODULE_CLASS := ETC
+# This needs to be /init.recovery.mt6735.rc
+LOCAL_MODULE_PATH := $(TARGET_ROOT_OUT)
+include $(BUILD_PREBUILT)

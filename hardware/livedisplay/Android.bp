@@ -13,8 +13,8 @@
 // limitations under the License.
 
 cc_binary {
-    name: "vendor.lineage.livedisplay@2.0-service-mediatek",
-    init_rc: ["vendor.lineage.livedisplay@2.0-service-mediatek.rc"],
+    name: "vendor.lineage.livedisplay@2.0-service.mtk",
+    init_rc: ["vendor.lineage.livedisplay@2.0-service.mtk.rc"],
     relative_install_path: "hw",
     proprietary: true,
     shared_libs: [

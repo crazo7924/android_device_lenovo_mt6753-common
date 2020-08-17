@@ -73,7 +73,7 @@ LOCAL_SHARED_LIBRARIES += libcam3_utils
 
 
 #-----------------------------------------------------------
-LOCAL_VENDOR_MODULE := true
+LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MULTILIB := both
 LOCAL_MODULE := libmmsdkservice.feature
 #-----------------------------------------------------------

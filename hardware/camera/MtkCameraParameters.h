@@ -54,7 +54,7 @@
 #ifndef _MTK_HARDWARE_MTKCAM_INCLUDE_MTKCAM_UTILS_FWK_MTKCAMERAPARAMETERS_H
 #define _MTK_HARDWARE_MTKCAM_INCLUDE_MTKCAM_UTILS_FWK_MTKCAMERAPARAMETERS_H
 
-#include <camera/CameraParameters.h>
+#include "CameraParameters.h"
 
 namespace android {
 

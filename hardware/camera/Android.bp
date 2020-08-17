@@ -6,8 +6,4 @@ cc_library_static {
 
     srcs: ["CameraParameters.cpp"],
     export_include_dirs: ["."],
-
-    include_dirs: [
-        "device/lenovo/k5fpr/hardware/include",
-    ]
 }
