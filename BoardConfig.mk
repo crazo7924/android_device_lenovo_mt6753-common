@@ -116,7 +116,8 @@ TARGET_CPU_MEMCPY_OPT_DISABLE := true
 MALLOC_SVELTE := true
 
 # Charger
-BOARD_CHARGER_SHOW_PERCENTAGE := true
+WITH_LINEAGE_CHARGER := true
+BACKLIGHT_PATH := "/sys/class/leds/lcd-backlight/brightness"
 
 # Boot animation
 TARGET_BOOTANIMATION_PRELOAD := true
