@@ -4,9 +4,10 @@ LOCAL_PATH:= $(call my-dir)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
+LOCAL_SRC_FILES += $(call all-java-files-under, ../telephony-internal)
 
 LOCAL_JAVA_LIBRARIES += telephony-common
-LOCAL_JAVA_LIBRARIES += ims-common
+LOCAL_JAVA_LIBRARIES += ims-common okhttp
 LOCAL_STATIC_JAVA_LIBRARIES += wfo-common
 
 # Use SimServs.jar for VoLTE MMTelSS Package

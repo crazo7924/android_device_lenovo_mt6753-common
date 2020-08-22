@@ -46,6 +46,7 @@ include $(BUILD_SHARED_LIBRARY)
 include $(CLEAR_VARS)
 
 LOCAL_SRC_FILES := $(call all-java-files-under, src)
+LOCAL_SRC_FILES += $(call all-java-files-under, ../telephony-internal)
 
 LOCAL_JAVA_LIBRARIES += telephony-common ims-common
 
