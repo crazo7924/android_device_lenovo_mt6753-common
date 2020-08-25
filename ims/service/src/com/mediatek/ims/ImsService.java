@@ -58,10 +58,10 @@ import android.telephony.Rlog;
 import android.telephony.ServiceState;
 import android.telephony.SubscriptionManager;
 
-import com.android.ims.ImsCallProfile;
+import android.telephony.ims.ImsCallProfile;
 import com.android.ims.ImsConfig;
 import com.android.ims.ImsManager;
-import com.android.ims.ImsReasonInfo;
+import android.telephony.ims.ImsReasonInfo;
 import com.android.ims.ImsServiceClass;
 import com.android.ims.internal.IImsRegistrationListener;
 import com.android.ims.internal.IImsCallSession;

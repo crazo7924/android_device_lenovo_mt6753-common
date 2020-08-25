@@ -287,7 +287,6 @@ public class XcapClient {
                 mConnection.setDoInput(true);
                 mConnection.setConnectTimeout(SOCKET_OPERATION_TIMEOUT);
                 mConnection.setReadTimeout(SOCKET_OPERATION_TIMEOUT);
-                mConnection.setWriteTimeout(SOCKET_OPERATION_TIMEOUT);
                 // Header: User-Agent
                 mConnection.setRequestProperty("User-Agent", mUserAgent);
                 addExtraHeaders(mConnection, additionalRequestHeaders);

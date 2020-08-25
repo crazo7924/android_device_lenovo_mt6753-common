@@ -254,12 +254,10 @@ public class WorldPhoneOm extends Handler implements IWorldPhone {
                 WorldPhoneOm.logd("sVoiceRegState: " + WorldPhoneUtil.stateToString(WorldPhoneOm.sVoiceRegState));
                 WorldPhoneOm.logd("sRilVoiceRegState: " + WorldPhoneUtil.regStateToString(WorldPhoneOm.sRilVoiceRegState));
                 stringBuilder = (new StringBuilder()).append("sRilVoiceRadioTech: ");
-                WorldPhoneOm.sServiceState;
                 WorldPhoneOm.logd(stringBuilder.append(ServiceState.rilRadioTechnologyToString(WorldPhoneOm.sRilVoiceRadioTechnology)).toString());
                 WorldPhoneOm.logd("sDataRegState: " + WorldPhoneUtil.stateToString(WorldPhoneOm.sDataRegState));
                 WorldPhoneOm.logd("sRilDataRegState: " + WorldPhoneUtil.regStateToString(WorldPhoneOm.sRilDataRegState));
                 stringBuilder = (new StringBuilder()).append("sRilDataRadioTech: ");
-                WorldPhoneOm.sServiceState;
                 WorldPhoneOm.logd(stringBuilder.append(ServiceState.rilRadioTechnologyToString(WorldPhoneOm.sRilDataRadioTechnology)).toString());
                 WorldPhoneOm.logd("sIsAutoSelectEnable: " + WorldPhoneOm.sIsAutoSelectEnable);
                 if (i == WorldPhoneOm.sMajorSim)

@@ -3,7 +3,7 @@ package com.mediatek.internal.telephony.dataconnection;
 import android.os.SystemProperties;
 import android.telephony.Rlog;
 import android.text.TextUtils;
-import com.android.internal.telephony.PhoneBase;
+import com.android.internal.telephony.imsphone.ImsPhoneBase;
 import com.android.internal.telephony.dataconnection.DcFailCause;
 import com.mediatek.common.MPlugin;
 import com.mediatek.common.telephony.IGsmDCTExt;
@@ -420,7 +420,7 @@ public class DcFailCauseManager {
     //   549	562	597	java/lang/Exception
   }
   
-  public boolean createGsmDCTExt(PhoneBase paramPhoneBase) {
+  public boolean createGsmDCTExt(ImsPhoneBase paramPhoneBase) {
     this.mPhone = paramPhoneBase;
     boolean bool = false;
     if (!this.mIsBsp)
@@ -479,7 +479,7 @@ public class DcFailCauseManager {
   
   public Operator mOperator = Operator.NONE;
   
-  private PhoneBase mPhone;
+  private ImsPhoneBase mPhone;
   
   public int mRandomizationTime;
   

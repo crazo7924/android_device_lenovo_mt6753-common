@@ -45,11 +45,11 @@ import android.os.Message;
 import android.os.RemoteException;
 import android.util.Log;
 
-import com.android.ims.ImsCallForwardInfo;
+import android.telephony.ims.ImsCallForwardInfo;
 /// For OP01 UT
-import com.android.ims.ImsCallForwardInfoEx;
-import com.android.ims.ImsReasonInfo;
-import com.android.ims.ImsSsInfo;
+import com.mediatek.ims.ImsCallForwardInfoEx;
+import android.telephony.ims.ImsReasonInfo;
+import android.telephony.ims.ImsSsInfo;
 import com.android.ims.ImsUtInterface;
 import com.android.ims.internal.IImsUt;
 import com.android.ims.internal.IImsUtListener;
@@ -58,7 +58,7 @@ import com.android.internal.telephony.CallForwardInfo;
 import java.net.UnknownHostException;
 
 /// For OP01 UT
-import com.android.internal.telephony.CallForwardInfoEx;
+import com.mediatek.internal.telephony.CallForwardInfoEx;
 import com.android.internal.telephony.CommandsInterface;
 import com.mediatek.simservs.xcap.XcapException;
 

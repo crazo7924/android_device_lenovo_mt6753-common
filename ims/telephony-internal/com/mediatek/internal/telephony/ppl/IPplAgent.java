@@ -127,7 +127,7 @@ public interface IPplAgent extends IInterface {
     }
   }
   
-  private static class Proxy implements IPplAgent {
+  static class Proxy implements IPplAgent {
     private IBinder mRemote;
     
     Proxy(IBinder param1IBinder) {

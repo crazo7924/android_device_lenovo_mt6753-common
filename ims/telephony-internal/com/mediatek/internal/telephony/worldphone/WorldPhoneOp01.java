@@ -256,12 +256,10 @@ public class WorldPhoneOp01 extends Handler implements IWorldPhone {
                 WorldPhoneOp01.logd("sVoiceRegState: " + WorldPhoneUtil.stateToString(WorldPhoneOp01.sVoiceRegState));
                 WorldPhoneOp01.logd("sRilVoiceRegState: " + WorldPhoneUtil.regStateToString(WorldPhoneOp01.sRilVoiceRegState));
                 stringBuilder = (new StringBuilder()).append("sRilVoiceRadioTech: ");
-                WorldPhoneOp01.sServiceState;
                 WorldPhoneOp01.logd(stringBuilder.append(ServiceState.rilRadioTechnologyToString(WorldPhoneOp01.sRilVoiceRadioTechnology)).toString());
                 WorldPhoneOp01.logd("sDataRegState: " + WorldPhoneUtil.stateToString(WorldPhoneOp01.sDataRegState));
                 WorldPhoneOp01.logd("sRilDataRegState: " + WorldPhoneUtil.regStateToString(WorldPhoneOp01.sRilDataRegState));
                 stringBuilder = (new StringBuilder()).append("sRilDataRadioTech: ");
-                WorldPhoneOp01.sServiceState;
                 WorldPhoneOp01.logd(stringBuilder.append(ServiceState.rilRadioTechnologyToString(WorldPhoneOp01.sRilDataRadioTechnology)).toString());
                 WorldPhoneOp01.logd("sIsAutoSelectEnable: " + WorldPhoneOp01.sIsAutoSelectEnable);
                 if (WorldPhoneOp01.sIsAutoSelectEnable && i == WorldPhoneOp01.sMajorSim)

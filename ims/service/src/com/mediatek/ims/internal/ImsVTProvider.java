@@ -50,7 +50,7 @@ import java.util.List;
 import java.lang.Integer;
 import java.lang.Thread;
 
-import com.android.ims.internal.ImsVideoCallProvider;
+import android.telephony.ims.ImsVideoCallProvider;
 import com.mediatek.ims.internal.ImsVTProviderUtil.Size;
 
 public class ImsVTProvider extends ImsVideoCallProvider {

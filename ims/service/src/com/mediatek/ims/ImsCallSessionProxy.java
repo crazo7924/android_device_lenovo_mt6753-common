@@ -62,27 +62,28 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
 import com.android.ims.ImsCall;
-import com.android.ims.ImsCallProfile;
-import com.android.ims.ImsConferenceState;
+import android.telephony.ims.ImsCallProfile;
+import android.telephony.ims.ImsConferenceState;
 import com.android.ims.ImsConfig;
 import com.android.ims.ImsManager;
-import com.android.ims.ImsReasonInfo;
-import com.android.ims.ImsStreamMediaProfile;
+import android.telephony.ims.ImsReasonInfo;
+import android.telephony.ims.ImsStreamMediaProfile;
 import com.android.ims.internal.IImsCallSessionListener;
 import com.android.ims.internal.IImsCallSession;
 import com.android.ims.internal.IImsVideoCallProvider;
-import com.android.ims.internal.ImsCallSession;
+import android.telephony.ims.ImsCallSession;
 
 import com.android.internal.telephony.CommandException;
 import com.android.internal.telephony.CommandException.Error;
 import com.android.internal.telephony.CommandsInterface;
 import com.android.internal.telephony.LastCallFailCause;
 import com.android.internal.telephony.TelephonyIntents;
-import com.android.internal.telephony.gsm.CallFailCause;
+import com.android.internal.telephony.CallFailCause;
+
 import com.mediatek.ims.WfcReasonInfo;
+
 import com.mediatek.internal.telephony.ConferenceCallMessageHandler;
 import com.mediatek.internal.telephony.RadioCapabilitySwitchUtil;
-
 import com.mediatek.ims.internal.CallControlDispatcher;
 // For ViLTE feature.
 import com.mediatek.ims.internal.ImsVTProvider;

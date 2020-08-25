@@ -57,7 +57,7 @@ import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 
 import com.android.internal.telephony.CallForwardInfo;
-import com.android.internal.telephony.CallForwardInfoEx;
+import com.mediatek.internal.telephony.CallForwardInfoEx;
 import com.android.internal.telephony.CommandException;
 import com.android.internal.telephony.CommandsInterface;
 import com.android.internal.telephony.RILConstants;
